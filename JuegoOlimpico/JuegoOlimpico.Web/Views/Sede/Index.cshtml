@@ -1,0 +1,102 @@
+﻿
+@model  JuegoOlimpico.Web.Models.SedeOlimpicaModel
+
+@{
+    ViewBag.Title = "Mantenimiento Sedes";
+}
+
+<style>
+    .modal {
+        overflow-y: auto;
+    }
+</style>
+
+<link href="~/Content/jqGrid_Cof/css/ui.jqgrid-bootstrap.css" rel="stylesheet" />
+<link href="~/Content/jqGrid_Cof/css/ui.jqgrid-bootstrap-ui.css" rel="stylesheet" />
+
+<div id="listado-sedes" data-request-url="@Url.Action("Buscar", "Sede")"></div>
+<div id="modal-operacioncoberturada" data-request-url="@Url.Action("ObtenerSede", "Sede")"></div>
+<div id="opcob-registrar" data-request-url="@Url.Action("Grabar", "Sede")"></div>
+<div id="opcob-eliminar" data-request-url="@Url.Action("Eliminar", "Sede")"></div>
+
+<div class="col-lg-12">
+
+    @Html.HiddenFor(m => m.IdPais, new { id = "hdIdPais" })
+
+
+
+    <div class="panel panel-default">
+        <div style="text-transform: uppercase; font-weight: bold; font-size: 13px;" class="panel-heading">
+            Gestión de Sedes Olimpicas
+        </div>
+    </div>
+    <div class="panel-body">
+        <center>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button style="margin-right: 4px;padding-right:25px;text-align:center;padding-left: 25px;" class="btn btn-primary" id="btnCrear">
+                        CREAR
+                    </button>
+                </div>
+            </div>
+        </center>
+
+        <hr />
+
+        <div class="form-horizontal">
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.Pais, new { @class = "control-label col-sm-2", @style = "text-align:right;" })
+                <div class="col-md-2">
+                    @Html.DropDownListFor(m => m.IdPais, new SelectList(Model.Paises, "Id", "Nombre", Model.IdPais), "--TODOS--", new { id = "ddlPais", @class = "form-control input-sm" })
+                </div>
+                <div class="col-md-2" style="text-align:center;">
+                    <button class="btn btn-primary" id="btnBuscar" name="search" value="Filter" style="padding-right: 21px;padding-left: 21px;">
+                        BUSCAR
+                    </button>
+                </div>
+                <div class="col-md-2" style="text-align:center;">
+                    <button class="btn btn-primary " id="btnLimpiar" style="padding-right: 21px;padding-left: 21px;">
+                        LIMPIAR
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+        <br />
+        <br />
+        <div class="col-lg-12">
+            <div>
+                <table id="jqGridOpCob"></table>
+                <div id="jqGridPagerOpCob">
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="modal fade" id="crear-operacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false">
+        <div id="div-creacion">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="modal fade" id="obtener_operacion" tabindex="-1" data-keyboard="false">
+            <div id="div-obtener">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script src="~/Content/jqGrid_Cof/src/i18n/grid.locale-es.js"></script>
+    <script src="~/Content/jqGrid_Cof/src/jquery.jqGrid.js"></script>
+    <script src="~/Scripts/app/operacion.js"></script>
+
+}

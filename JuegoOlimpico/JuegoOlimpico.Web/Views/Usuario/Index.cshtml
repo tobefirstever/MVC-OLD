@@ -1,0 +1,257 @@
+﻿
+@{
+    ViewBag.Title = "Mantenimiento Usuarios";
+}
+
+<style>
+    .modal {
+        overflow-y: auto;
+    }
+</style>
+
+<div id="listado-usuarios" data-request-url="@Url.Action("Buscar", "Usuario")"></div>
+
+<div id="idioma-datatable" data-request-url="@Url.Content("~/Content/datatable / idioma / datatable.es - ES.json")"></div>
+
+<br />
+<br />
+
+
+<link href="~/Content/datatable/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/datatable/css/responsive.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/datatable/css/buttons.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/fontawesome/css/all.css" rel="stylesheet" />
+
+<div class="col-lg-12">
+
+    <div class="panel panel-default">
+        <div style="text-transform: uppercase; font-weight: bold; font-size: 13px;" class="panel-heading">
+            Gestión de Usuarios
+        </div>
+        <div class="panel-body">
+            @*<center>
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <button class="btn btn-default" id="btnBuscarUsuario">
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </center>
+
+                <hr />*@
+            <br />
+
+            <div class="col-lg-12">
+                <table class="table table-striped- table-bordered table-hover table-checkable font_doce" id="tabla-usuario">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Usuario</th>
+                            <th>Correo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="modal fade" id="FormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Usuarios</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+
+
+                        <input type="hidden" id="txtIdPersona" />
+                        <div class="form-group">
+                            <label for="txtNombre">Nombre:</label>
+                            <input type="text" class="form-control" id="txtNombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtContrasena">Contrasena:</label>
+                            <input type="password" class="form-control" id="txtContrasena">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtCorreo">Correo:</label>
+                            <input type="text" class="form-control" id="txtCorreo">
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+
+    <script src="~/Content/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/datatable/js/dataTables.responsive.min.js"></script>
+    <script src="~/Content/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="~/Content/fontawesome/js/all.js"></script>
+
+
+    <script>
+        var tabla_persona;
+         $(document).ready( function () {
+             listar('');
+
+             //$("#btnBuscarUsuario").on("click", function (t) {
+             //    t.preventDefault();
+             //    $('#tabla-usuario').DataTable().destroy();
+             //    listar('');
+             //});
+
+
+        });
+
+
+        function listar(nombre = null) {
+            tabla_persona = $('#tabla-usuario').DataTable({
+                "ajax": {
+                    "url": "@Url.Action("Buscar", "Usuario")",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "Id" },
+                    { "data": "Usuario" },
+                    { "data": "Correo" },
+                    { "data": "Id", "render": function (data) {
+                            return "<button class='btn btn-primary btn-sm' type='button' onclick='abrirModal(" + data + ")'><i class='fas fa-pen'></i></button>" + " " +
+                                "<button class='btn btn-danger btn-sm ml-2' type='button' onclick='Eliminar(" + data + ")'><i class='fa fa-trash'></i></button>"
+                        },
+                        "orderable": false,
+                        "searchable": false,
+                        "width": "150px"
+                    }
+                ],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        text: 'Agregar Nuevo',
+                        attr: { class: 'btn btn-success btn-sm' },
+                        action: function (e, dt, node, config) {
+                            abrirModal(0)
+                        }
+                    }
+                 ],
+                 "language": {
+                     "url": "@Url.Content("~/Content/datatable/idioma/datatable.es-ES.json")"
+                 }
+
+             });
+        }
+
+        function abrirModal($idpersona) {
+
+          $("#txtIdPersona").val($idpersona);
+            if ($idpersona != 0) {
+
+                jQuery.ajax({
+                    url: "@Url.Action("Obtener","Usuario")" + "?idpersona=" + $idpersona,
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+
+                        if (data != null) {
+
+                            $("#txtNombre").val(data.Usuario);
+                            $("#txtContrasena").val(data.Contrasena);
+                            $("#txtCorreo").val(data.Correo);
+                        }
+
+                    }
+                });
+            } else {
+                $("#txtNombre").val("");
+                $("#txtContrasena").val("");
+                $("#txtCorreo").val("");
+            }
+
+            $('#FormModal').modal('show');
+
+        }
+
+        function Guardar() {
+
+            var $data = {
+                oPersona: {
+                    Id: parseInt($("#txtIdPersona").val()),
+                    Nombre: $("#txtNombre").val(),
+                    Contrasena: $("#txtContrasena").val(),
+                    Correo: $("#txtCorreo").val(),
+                }
+            }
+
+            jQuery.ajax({
+                url: "@Url.Action("Guardar", "Usuario")",
+                type: "POST",
+                data: JSON.stringify($data),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+
+                    if (data.resultado) {
+                        tabla_persona.ajax.reload();
+                        $('#FormModal').modal('hide');
+                    } else {
+                        alert("No se pudo guardar los cambios");
+                    }
+                },
+                error: function (error) {
+                    console.log(error)
+                },
+                beforeSend: function () {
+
+                }
+            });
+        }
+
+        function Eliminar($idpersona) {
+            if (confirm("¿Realmente desea eliminar?")) {
+
+                jQuery.ajax({
+                    url: "@Url.Action("Eliminar", "Usuario")" + "?id=" + $idpersona,
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+                        if (data.resultado) {
+                            tabla_persona.ajax.reload();
+                        }
+                    }
+                });
+
+
+            }
+        }
+
+    </script>
+}

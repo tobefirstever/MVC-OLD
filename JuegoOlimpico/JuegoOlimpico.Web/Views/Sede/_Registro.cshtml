@@ -1,0 +1,75 @@
+﻿@model JuegoOlimpico.Web.Models.RegistrarSedeModel
+@{
+    Layout = null;
+}
+
+
+<div class="modal-dialog modal-lg">
+
+    @Html.HiddenFor(model => model.IdSede, new { id = "hdnIdSede" })
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+            </button>
+            <h4 style="color: White;" class="modal-title" id="H3">
+                Creación / Modificación
+            </h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Datos de la sede olimpica
+                </div>
+                <div class="panel-body">
+                    <div style="margin: auto 0px;" class="form-horizontal">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NombreSede, new { @class = "control-label col-sm-3" })
+                            <div class="col-md-3">
+                                @Html.TextBoxFor(m => m.NombreSede, new { id = "txtSede", @class = "form-control input-sm", @maxlength = 25 })
+                            </div>
+                            @Html.LabelFor(m => m.NombrePais, new { @class = "control-label col-sm-3", @style = "text-align:left;" })
+                            <div class="col-md-3">
+                                @Html.DropDownListFor(m => m.IdPais, new SelectList(Model.Paises, "Id", "Nombre", Model.IdPais), new { id = "ddlPaisModal", @class = "form-control input-sm" })
+                            </div>
+
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NroComplejos, new { @class = "control-label col-sm-3", @style = "text-align:center;" })
+                            <div class="col-md-3">
+                                @Html.TextBoxFor(m => m.NroComplejos, new { id = "txtNroComplejos", @class = "form-control input-sm", @maxlength = 4 })
+                            </div>
+                            @Html.LabelFor(m => m.Presupuesto, new { @class = "control-label col-sm-3", @style = "text-align:left;" })
+                            <div class="col-md-3">
+                                @Html.TextBoxFor(m => m.Presupuesto, new { id = "txtPresupuestoModal", @class = "form-control input-sm", @maxlength = 5 })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <center>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <button class="btn btn-primary" id="btnGrabarModal" style="padding-right: 21px;padding-left: 21px;">
+                            GRABAR
+                        </button>
+
+
+                        <button class="btn btn-primary" id="btnCancelarModal" style="padding-right: 21px;padding-left: 21px;">
+                            CANCELAR
+                        </button>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/app/MantenimientoOperacion.js"></script>

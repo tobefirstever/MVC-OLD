@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEB693EC-ABC0-4F4D-9E10-AD6114A69DFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JuegoOlimpico.Application.Main</RootNamespace>
+    <AssemblyName>JuegoOlimpico.Application.Main</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.2\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginApplication.cs" />
+    <Compile Include="PaisApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SedeApplication.cs" />
+    <Compile Include="UsuarioApplication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JuegoOlimpico.Application.DTO\JuegoOlimpico.Application.DTO.csproj">
+      <Project>{642ed228-7249-484f-93bc-6f2476668d14}</Project>
+      <Name>JuegoOlimpico.Application.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JuegoOlimpico.Application.Interfaces\JuegoOlimpico.Application.Interfaces.csproj">
+      <Project>{6d41f802-39a8-4fac-869e-2a26b21476e1}</Project>
+      <Name>JuegoOlimpico.Application.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JuegoOlimpico.Domain.Entities\JuegoOlimpico.Domain.Entities.csproj">
+      <Project>{cdb14b86-4be2-4ac3-b42d-c2d020b46ac3}</Project>
+      <Name>JuegoOlimpico.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JuegoOlimpico.Domain.Interfaces\JuegoOlimpico.Domain.Interfaces.csproj">
+      <Project>{8520E6D2-9EF4-4893-977A-885E1D71FCA1}</Project>
+      <Name>JuegoOlimpico.Domain.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JuegoOlimpico.Transversal.Common\JuegoOlimpico.Transversal.Common.csproj">
+      <Project>{561f5417-72f1-4f8c-814d-215d6d3508c4}</Project>
+      <Name>JuegoOlimpico.Transversal.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JuegoOlimpico.Transversal.Mapper\JuegoOlimpico.Transversal.Mapper.csproj">
+      <Project>{eb8e022d-2d9b-4709-b64d-bd12454b0661}</Project>
+      <Name>JuegoOlimpico.Transversal.Mapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

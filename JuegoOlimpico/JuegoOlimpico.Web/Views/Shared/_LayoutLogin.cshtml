@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>.:Juegos Olimpicos:.</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css/login")
+</head>
+<body>
+    @RenderBody()
+
+    <div class="modalLoading">
+        <div id="content">
+            <div id="divLoading" style="width: 300px; height: 150px; text-align: center; border:1px solid  #004e98;  background-color: white;">
+                <div id="load" class="div_pagina">
+                    <img src="~/Images/load.gif" alt="carga" />
+                    <br />
+                    Procesando espere un momento...
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+
+    @*aqui va jqueryUI*@
+
+
+
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/aes.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            document.getElementById("load").InnerHTML = "<img src = '../../Images/load.gif'>";
+            try {
+                $("input[type='text']").each(function () {
+                    $(this).attr("autocomplete", "off");
+                });
+            }
+            catch (e) { }
+
+            function disableBack() { window.history.forward() }
+
+            window.onload = disableBack();
+            window.onpageshow = function (evt) { if (evt.persisted) disableBack() }
+
+        });
+
+
+
+
+    </script>
+</body>
+</html>

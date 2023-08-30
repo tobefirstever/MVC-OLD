@@ -1,0 +1,278 @@
+﻿/*.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 0, 0, 0, .7 ) 
+                50% 50% 
+                no-repeat;
+    overflow-y: scroll;
+    overflow: auto;
+}*/
+
+.modalLoading {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 0, 0, 0, .7 ) 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modalLoading {
+    display: block;
+}
+
+.modalMessage {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 0, 0, 0, .7 ) 
+                50% 50% 
+                no-repeat;
+}
+
+body.message {
+    overflow: hidden;   
+}
+
+body.message .modalMessage {
+    display: block;
+}
+/*Deshabilitar css Modal*/
+/*.modal-dialog
+{
+    right: auto;
+    left: 50%;
+    width: 700px;
+    padding-top: 50px;
+    padding-left: 23%;
+}
+
+.modal-dialog-medium
+{
+    right: auto;
+    left: 50%;
+    width: 800px;
+    padding-top: 50px;
+    padding-left: 18%;
+}
+
+.modal-dialog-big
+{
+    right: auto;
+    left: 50%;
+    width: 1050px;
+    padding-top: 50px;
+    padding-left: 8%;
+    /*position: fixed;*/
+}
+
+/*.modal-content
+{
+    position:relative;
+    background-color:#FFFFFF;
+    border-radius:6px;
+    outline:none;
+    border: 1px solid rgba(0, 0, 0, 0, 0.2);
+}
+
+.modal-header {
+  min-height: 16.428571429px;
+  padding: 10px;
+  border-bottom: 1px solid #7D997D;
+}
+
+.modal-header .close {
+  margin-top: -2px;
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.428571429;
+  text-align: left;
+  color:#B6C72C;
+}*/
+/*Deshabilitar css Modal*/
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.close:hover,
+.close:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.col-lg-12 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.panel {
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-body {
+  padding: 15px;
+}
+
+.panel-default {
+  border-color: #004386;
+}
+
+.panel-heading {
+  padding: 7px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  text-align: left;
+}
+
+.panel-default > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #024683;
+}
+
+.accordion1 > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #dddddd;
+}
+
+.accordion2 > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #dddddd;
+}
+
+.form-group {
+  margin-bottom: 4px !important;
+}
+
+.panel-button
+{
+    height: 60px;
+    display: inline-block;
+    clear:both;
+    width: 400px;
+}
+
+.panel-button .button
+{
+    display: inline-block;
+}
+
+.panel-button-big
+{
+    height: 60px;
+    display: inline-block;
+    clear:both;
+    width: 800px;
+}
+
+.panel-button-big .button
+{
+    display: inline-block;
+}
+
+.panel-button-cabecera
+{
+    display: inline-block;
+    clear:both;
+    float: right;
+}
+
+.panel-button-cabecera .button
+{
+    display: inline-block;
+}
+
+.modal-title-color
+{
+    color: #ffffff;
+    text-transform: uppercase; 
+    font-weight: bold; 
+    font-size: 13px;
+}
+
+.message-panel
+{
+    font-size: 13px;
+	font-family: Verdana;
+	text-transform :uppercase;
+	word-wrap:break-word;
+}
+
+.message-panel-box
+{
+	display: inline-block;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+.message-panel-button
+{
+    height: 45px;
+    display: inline-block;
+    clear:both;
+    width: 100%;
+    text-align: center;
+}
+
+@media only screen and (min-width:1450px){
+    .modal-dialog-big
+    {
+        right: auto;
+        left: 50%;
+        width: 1050px;
+        padding-top: 50px;
+        padding-left: 17%;
+        /*position: fixed;*/
+    }
+}

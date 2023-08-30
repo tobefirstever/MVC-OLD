@@ -1,0 +1,139 @@
+﻿
+@using JuegoOlimpico.Web.Models
+@model LoginViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+
+}
+
+
+<div id="main">
+    <div id="line_v">
+    </div>
+    <div id="container_principal_2" style="margin: auto;">
+        <div id="formu">
+            <div id="logo" class="logo">
+                @*<img id="img_logo" alt="" src="~/images/logo-v2.png" width="430" height="99" />*@
+            </div>
+            <div id="form_login">
+                @using (Html.BeginForm("Login", null, FormMethod.Post, new { id = "loginForm" }))
+                {
+                    <div id="AntiForgeryTokenContainer">
+                        @Html.Partial("_AntiForgeryToken", Model)
+                    </div>
+                    <input type="hidden" value="@ViewBag.__key" id="__key" />
+
+                    <div id="login">
+                        <div class="text_area_login">
+                            <div id="usuario_login">USUARIO</div>
+                            @Html.TextBoxFor(m => m.Nombre, new { @class = "usuario_login_txt", @id = "Nombre" })
+
+                          
+
+                        </div>
+                        <div class="text_area_login">
+                            <div id="contrasena_login">contraseña</div>
+                            @Html.PasswordFor(m => m.Contrasena, new { @class = "usuario_login_txt", @style = "width: 190px; margin-left: 10px;", @id = "Contrasena" })
+
+                            
+                        </div>
+                        <div id="btn_ingresar">
+                            <input type="submit" name="btnIngresar" id="btnIngresar" value="ingresar" />
+                        </div>
+                        <br />
+                        @Html.ValidationMessageFor(m => m.Nombre)
+                        @Html.ValidationMessageFor(m => m.Contrasena)
+                        <div id="error" class="errors">
+                            @Html.ValidationSummary(true)
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="copi">
+            <span style="float: left; margin-left: 40px;">LIMA, @ViewBag.Fecha</span>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input").bind('cut copy paste contextmenu', function (e) {
+                //e.preventDefault();
+            });
+
+            $('#loginForm').submit(function () {
+                var isValid = $("#loginForm").valid();
+
+                //Limpiamos el mensaje
+                document.getElementById('error').innerHTML = "";
+                $("#error").removeClass("error-summary");
+
+                if (isValid) {
+
+                    let usuario = $("#Nombre").val();
+                    let contrasena = $("#Contrasena").val();
+                    let key = CryptoJS.enc.Utf8.parse('8080808080808080');
+                    let iv = CryptoJS.enc.Utf8.parse('8080808080808080');
+
+                    let encryptedlogin = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(usuario), key,
+                        {
+                            keySize: 128 / 8,
+                            iv: iv,
+                            mode: CryptoJS.mode.CBC,
+                            padding: CryptoJS.pad.Pkcs7
+                        });
+
+                    $('#Nombre').val(encryptedlogin);
+
+                    let encryptedpassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(contrasena), key,
+                        {
+                            keySize: 128 / 8,
+                            iv: iv,
+                            mode: CryptoJS.mode.CBC,
+                            padding: CryptoJS.pad.Pkcs7
+                        });
+
+                    $('#Contrasena').val(encryptedpassword);
+
+                    $.ajax({
+                        url: this.action,
+                        type: this.method,
+                        data: $(this).serialize(),
+                        success: function (result) {
+                            if (result.success) {
+                                $("#btnIngresar").attr("disabled", "disabled");
+                                $.get('@Url.Action("RefreshToken")', function (html) {
+                                    var tokenValue = $('<div />').html(html).find('input[type="hidden"]').val();
+                                    $('#comment input[type="hidden"]').val(tokenValue);
+                                    window.location.href = '@Url.Content("~/Home/Index")';
+                                });
+                            }
+                            else {
+                                if (result.Error) {
+                                    document.getElementById('error').innerHTML = result.Error;
+                                    $("#error").addClass("error-summary");
+                                }
+                                else {
+                                    window.location.href = '@Url.Content("~/Login/Login")';
+                                }
+                            }
+                        }
+                    });
+                }
+                return false;
+            });
+        });
+    </script>
+}
+
+

@@ -1,0 +1,144 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Infrastructure", "1.Infrastructure", "{3E449E94-1C62-409F-BF04-5EDDCA004EC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{89044384-5DB0-48AF-A9CB-D95B8AB0B8EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Application", "3.Application", "{D4026DC6-B15E-461F-8170-72E9FFEEA680}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Services", "4.Services", "{8451727D-B575-408C-A055-39A485374478}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Transversal", "5.Transversal", "{6E1C65DD-D615-4A9D-9BD5-E3788C2D5DC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Presentation", "6.Presentation", "{3DD1896D-3E0B-4918-B06B-AF181D6E1B3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Transversal.Common", "JuegoOlimpico.Transversal.Common\JuegoOlimpico.Transversal.Common.csproj", "{561F5417-72F1-4F8C-814D-215D6D3508C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Transversal.IoC", "JuegoOlimpico.Transversal.IoC\JuegoOlimpico.Transversal.IoC.csproj", "{955B1AF8-5912-49F6-B6F0-5B18B9997CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Transversal.Mapper", "JuegoOlimpico.Transversal.Mapper\JuegoOlimpico.Transversal.Mapper.csproj", "{EB8E022D-2D9B-4709-B64D-BD12454B0661}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Application.DTO", "JuegoOlimpico.Application.DTO\JuegoOlimpico.Application.DTO.csproj", "{642ED228-7249-484F-93BC-6F2476668D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Application.Interfaces", "JuegoOlimpico.Application.Interfaces\JuegoOlimpico.Application.Interfaces.csproj", "{6D41F802-39A8-4FAC-869E-2A26B21476E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Application.Main", "JuegoOlimpico.Application.Main\JuegoOlimpico.Application.Main.csproj", "{AEB693EC-ABC0-4F4D-9E10-AD6114A69DFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Domain.Entities", "JuegoOlimpico.Domain.Entities\JuegoOlimpico.Domain.Entities.csproj", "{CDB14B86-4BE2-4AC3-B42D-C2D020B46AC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Domain.Interfaces", "JuegoOlimpico.Domain.Interfaces\JuegoOlimpico.Domain.Interfaces.csproj", "{8520E6D2-9EF4-4893-977A-885E1D71FCA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Domain.Main", "JuegoOlimpico.Domain.Main\JuegoOlimpico.Domain.Main.csproj", "{D8B1C9AF-5F7C-41E4-A18B-2BA0B47B228A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Infrastructure.Interfaces", "JuegoOlimpico.Infrastructure.Interfaces\JuegoOlimpico.Infrastructure.Interfaces.csproj", "{FE6C1C6F-CF85-443F-8F3C-895E22AC8837}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Infrastructure.Configuration", "JuegoOlimpico.Infrastructure.Configuration\JuegoOlimpico.Infrastructure.Configuration.csproj", "{E37F2906-9996-4817-B792-706ED55CE43F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Infrastructure.Repository", "JuegoOlimpico.Infrastructure.Repository\JuegoOlimpico.Infrastructure.Repository.csproj", "{9D42218C-D6B0-46B3-9350-65E6E09AE107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Services.WebApi", "JuegoOlimpico.Services.WebApi\JuegoOlimpico.Services.WebApi.csproj", "{404297DB-CFF0-4595-88B3-1C973938A952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Web", "JuegoOlimpico.Web\JuegoOlimpico.Web.csproj", "{93CDD741-80A3-4A0D-B8D6-1A50D71E6E5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Web.Utilitario", "JuegoOlimpico.Web.Utilitario\JuegoOlimpico.Web.Utilitario.csproj", "{37C7FA46-1196-4C11-AAB8-A67DEA066277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoOlimpico.Web.Dto", "JuegoOlimpico.Web.Dto\JuegoOlimpico.Web.Dto.csproj", "{E06CFC2E-32E0-439F-97AB-8DA977E4FD6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{561F5417-72F1-4F8C-814D-215D6D3508C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561F5417-72F1-4F8C-814D-215D6D3508C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561F5417-72F1-4F8C-814D-215D6D3508C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561F5417-72F1-4F8C-814D-215D6D3508C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955B1AF8-5912-49F6-B6F0-5B18B9997CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955B1AF8-5912-49F6-B6F0-5B18B9997CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955B1AF8-5912-49F6-B6F0-5B18B9997CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955B1AF8-5912-49F6-B6F0-5B18B9997CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8E022D-2D9B-4709-B64D-BD12454B0661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8E022D-2D9B-4709-B64D-BD12454B0661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8E022D-2D9B-4709-B64D-BD12454B0661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8E022D-2D9B-4709-B64D-BD12454B0661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{642ED228-7249-484F-93BC-6F2476668D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{642ED228-7249-484F-93BC-6F2476668D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{642ED228-7249-484F-93BC-6F2476668D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{642ED228-7249-484F-93BC-6F2476668D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D41F802-39A8-4FAC-869E-2A26B21476E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D41F802-39A8-4FAC-869E-2A26B21476E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D41F802-39A8-4FAC-869E-2A26B21476E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D41F802-39A8-4FAC-869E-2A26B21476E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB693EC-ABC0-4F4D-9E10-AD6114A69DFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB693EC-ABC0-4F4D-9E10-AD6114A69DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB693EC-ABC0-4F4D-9E10-AD6114A69DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB693EC-ABC0-4F4D-9E10-AD6114A69DFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDB14B86-4BE2-4AC3-B42D-C2D020B46AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB14B86-4BE2-4AC3-B42D-C2D020B46AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB14B86-4BE2-4AC3-B42D-C2D020B46AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB14B86-4BE2-4AC3-B42D-C2D020B46AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8520E6D2-9EF4-4893-977A-885E1D71FCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8520E6D2-9EF4-4893-977A-885E1D71FCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8520E6D2-9EF4-4893-977A-885E1D71FCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8520E6D2-9EF4-4893-977A-885E1D71FCA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B1C9AF-5F7C-41E4-A18B-2BA0B47B228A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B1C9AF-5F7C-41E4-A18B-2BA0B47B228A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B1C9AF-5F7C-41E4-A18B-2BA0B47B228A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B1C9AF-5F7C-41E4-A18B-2BA0B47B228A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6C1C6F-CF85-443F-8F3C-895E22AC8837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6C1C6F-CF85-443F-8F3C-895E22AC8837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6C1C6F-CF85-443F-8F3C-895E22AC8837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6C1C6F-CF85-443F-8F3C-895E22AC8837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E37F2906-9996-4817-B792-706ED55CE43F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E37F2906-9996-4817-B792-706ED55CE43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E37F2906-9996-4817-B792-706ED55CE43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E37F2906-9996-4817-B792-706ED55CE43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D42218C-D6B0-46B3-9350-65E6E09AE107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D42218C-D6B0-46B3-9350-65E6E09AE107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D42218C-D6B0-46B3-9350-65E6E09AE107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D42218C-D6B0-46B3-9350-65E6E09AE107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{404297DB-CFF0-4595-88B3-1C973938A952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404297DB-CFF0-4595-88B3-1C973938A952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404297DB-CFF0-4595-88B3-1C973938A952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404297DB-CFF0-4595-88B3-1C973938A952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93CDD741-80A3-4A0D-B8D6-1A50D71E6E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93CDD741-80A3-4A0D-B8D6-1A50D71E6E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93CDD741-80A3-4A0D-B8D6-1A50D71E6E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93CDD741-80A3-4A0D-B8D6-1A50D71E6E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C7FA46-1196-4C11-AAB8-A67DEA066277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C7FA46-1196-4C11-AAB8-A67DEA066277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C7FA46-1196-4C11-AAB8-A67DEA066277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C7FA46-1196-4C11-AAB8-A67DEA066277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E06CFC2E-32E0-439F-97AB-8DA977E4FD6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E06CFC2E-32E0-439F-97AB-8DA977E4FD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E06CFC2E-32E0-439F-97AB-8DA977E4FD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E06CFC2E-32E0-439F-97AB-8DA977E4FD6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{561F5417-72F1-4F8C-814D-215D6D3508C4} = {6E1C65DD-D615-4A9D-9BD5-E3788C2D5DC7}
+		{955B1AF8-5912-49F6-B6F0-5B18B9997CEC} = {6E1C65DD-D615-4A9D-9BD5-E3788C2D5DC7}
+		{EB8E022D-2D9B-4709-B64D-BD12454B0661} = {6E1C65DD-D615-4A9D-9BD5-E3788C2D5DC7}
+		{642ED228-7249-484F-93BC-6F2476668D14} = {D4026DC6-B15E-461F-8170-72E9FFEEA680}
+		{6D41F802-39A8-4FAC-869E-2A26B21476E1} = {D4026DC6-B15E-461F-8170-72E9FFEEA680}
+		{AEB693EC-ABC0-4F4D-9E10-AD6114A69DFB} = {D4026DC6-B15E-461F-8170-72E9FFEEA680}
+		{CDB14B86-4BE2-4AC3-B42D-C2D020B46AC3} = {89044384-5DB0-48AF-A9CB-D95B8AB0B8EE}
+		{8520E6D2-9EF4-4893-977A-885E1D71FCA1} = {89044384-5DB0-48AF-A9CB-D95B8AB0B8EE}
+		{D8B1C9AF-5F7C-41E4-A18B-2BA0B47B228A} = {89044384-5DB0-48AF-A9CB-D95B8AB0B8EE}
+		{FE6C1C6F-CF85-443F-8F3C-895E22AC8837} = {3E449E94-1C62-409F-BF04-5EDDCA004EC5}
+		{E37F2906-9996-4817-B792-706ED55CE43F} = {3E449E94-1C62-409F-BF04-5EDDCA004EC5}
+		{9D42218C-D6B0-46B3-9350-65E6E09AE107} = {3E449E94-1C62-409F-BF04-5EDDCA004EC5}
+		{404297DB-CFF0-4595-88B3-1C973938A952} = {8451727D-B575-408C-A055-39A485374478}
+		{93CDD741-80A3-4A0D-B8D6-1A50D71E6E5F} = {3DD1896D-3E0B-4918-B06B-AF181D6E1B3D}
+		{37C7FA46-1196-4C11-AAB8-A67DEA066277} = {3DD1896D-3E0B-4918-B06B-AF181D6E1B3D}
+		{E06CFC2E-32E0-439F-97AB-8DA977E4FD6F} = {3DD1896D-3E0B-4918-B06B-AF181D6E1B3D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDBF14BA-F3FC-4A80-B59B-6D3BC967CC28}
+	EndGlobalSection
+EndGlobal
