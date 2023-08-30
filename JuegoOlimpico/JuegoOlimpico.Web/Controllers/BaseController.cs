@@ -13,12 +13,7 @@ namespace JuegoOlimpico.Web.Controllers
 {
     public class BaseController : Controller
     {
-        //protected UsuarioModel userData;
-
-        //public BaseController()
-        //{
-        //    userData = new UsuarioModel();
-        //}
+    
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -26,26 +21,8 @@ namespace JuegoOlimpico.Web.Controllers
             try
             {
               
-            
-               
-                //Clave clave = new Clave();
-                //string key = clave.generar(10000000, 99999999, 8);
-                //string iv = clave.generar(10000000, 99999999, 8);
                 ViewBag.__key = "-";
         
-                //string URLSignOut = string.Empty;
-                //if (userData == null)
-                //{
-                //    URLSignOut = "/Login/Index";
-                //    Session.Abandon();
-                //    FormsAuthentication.SignOut();
-
-                //    filterContext.Result = new RedirectResult(URLSignOut);
-                //    return;
-                //}
-               
-
-              //  base.OnActionExecuting(filterContext);
             }
             catch (Exception ex)
             {
@@ -53,17 +30,7 @@ namespace JuegoOlimpico.Web.Controllers
             }
         }
 
-        //public UsuarioModel UserData()
-        //{
-        //    UsuarioModel model = (UsuarioModel)Session["UsuarioModel"];
-        //    if (model == null)
-        //    {
-        //        return model;
-        //    }
-
-
-        //    return model;
-        //}
+      
 
         public string RenderPartialViewToString(string viewName, object model)
         {
@@ -84,7 +51,7 @@ namespace JuegoOlimpico.Web.Controllers
             var errors = new Dictionary<string, object>();
             foreach (var key in ModelState.Keys)
             {
-                // Only send the errors to the client.
+             
                 if (ModelState[key].Errors.Count > 0)
                 {
                     errors[key] = ModelState[key].Errors;

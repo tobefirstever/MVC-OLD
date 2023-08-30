@@ -367,15 +367,6 @@ function ValidaNumerosYLetrasYComma(e) {
     return patron.test(te);
 }
 
-//$(".div-modal").draggable({
-//    handle: ".modal-header"
-//});
-
-
-//DESCOMENTAR
-//$(".modal-dialog").draggable({
-//    handle: ".modal-header"
-//});
 
 function formatearNumero(num) {
     var

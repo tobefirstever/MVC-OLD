@@ -25,7 +25,6 @@ namespace JuegoOlimpico.Web.Utilitario
 
                 _httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                 _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
-                //_httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
                 jsonText = JsonConvert.SerializeObject(entity);
                 var request = new HttpRequestMessage(HttpMethod.Post, url);
@@ -149,10 +148,7 @@ namespace JuegoOlimpico.Web.Utilitario
         public async Task<LoginResponseDto> ObtenerToken<T>(T entity, string url)
         {
             string jsonText = string.Empty;
-            //_httpClient.BaseAddress = new Uri(apiPantallas);
-            //_httpClient.Timeout = new TimeSpan(0, 30, 0);
-            //_httpClient.DefaultRequestHeaders.Clear();
-
+            
             using (var _httpClient = new HttpClient())
             {
 

@@ -7,17 +7,17 @@ $(document).ready(function () {
     $.jgrid.defaults.responsive = true;
     $.jgrid.defaults.styleUI = 'Bootstrap';
 
-    fn_iniciarVista();
+    iniciarVista();
 
     $("#btnCrear").click(function () {
-        fn_cargarModalCrear(0);
+        cargarModalCrear(0);
     });
 
 });
 
 
 
-function fn_iniciarVista() {
+function iniciarVista() {
 
     $("#jqGridOpCob").jqGrid({
         url: $("#listado-sedes").data('request-url'),
@@ -70,10 +70,10 @@ function fn_iniciarVista() {
         },
         onSelectRow: function (rowid, status, e) {
             if (status) {
-                fn_cargarSeleccion(rowid, status);
+               cargarSeleccion(rowid, status);
             }
             else {
-                fn_cargarSeleccion(rowid, status);
+                cargarSeleccion(rowid, status);
             }
         },
         onSelectAll: function (aRowids, status) {
@@ -110,15 +110,15 @@ function fn_iniciarVista() {
         $("#jqGridPagerOpCob_left").show();
         $("#jqGridPagerOpCob_center").show();
 
-        fn_BuscarOperacionCoberturada();
+        buscarSede();
 
     });
     function bntEdit(cellvalue, options, rowObject) {
-        return '<a style="text-align:center !important;"  onClick=fn_EditarOpCob(' + rowObject.IdSede + "," + rowObject.IdPais + ');><span class="glyphicon glyphicon-edit icon-grid"></span></a>';
+        return '<a style="text-align:center !important;"  onClick=editarSede(' + rowObject.IdSede + "," + rowObject.IdPais + ');><span class="glyphicon glyphicon-edit icon-grid"></span></a>';
     };
     function btnEli(cellvalue, options, rowObject) {
      
-        return '<a style="text-align:center;"  onClick=fn_EliminarOpCob(' + rowObject.IdSede + ');><span class="glyphicon glyphicon-trash icon-grid"></span></a>';
+        return '<a style="text-align:center;"  onClick=eliminarSede(' + rowObject.IdSede + ');><span class="glyphicon glyphicon-trash icon-grid"></span></a>';
         
         
     }
@@ -144,7 +144,7 @@ function filterGrid() {
     $("#jqGridPagerOpCob_center").show();
 }
 
-function fn_BuscarOperacionCoberturada() {
+function buscarSede() {
     var postDataValues = $("#jqGridOpCob").jqGrid('getGridParam', 'postData');
 
     $('#jqGridOpCob').jqGrid().setGridParam(
@@ -158,7 +158,7 @@ function fn_BuscarOperacionCoberturada() {
 
 }
 
-function fn_EliminarOpCob(id) {
+function eliminarSede(id) {
     var rowData = $('#jqGridOpCob').jqGrid('getRowData', id);
    
    
@@ -205,16 +205,13 @@ function fn_EliminarOpCob(id) {
 }
 
 
-function fn_EditarOpCob(id, IdPais) {
+function editarSede(id, IdPais) {
 
-    var rowData = $('#jqGridOpCob').jqGrid('getRowData', id);
-
-
-    fn_cargarModalCrear(id);
+    cargarModalCrear(id);
 }
 
 
-function fn_cargarModalCrear(id) {
+function cargarModalCrear(id) {
     var data = new SedeModel();
     data.IdSede = id;
     $.ajax({
@@ -251,7 +248,7 @@ function EliminarSedeModel() {
     };
 }
 
-function fn_cargarSeleccion(id, status) {
+function cargarSeleccion(id, status) {
     if (status) {
         arrFilas.push({
             id: id,
