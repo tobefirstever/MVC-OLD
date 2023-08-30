@@ -17,7 +17,7 @@ namespace JuegoOlimpico.Web.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-
+            //ss
             try
             {
               
